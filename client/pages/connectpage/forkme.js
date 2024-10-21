@@ -7,11 +7,11 @@ export const ForkMe = ({ repo = "https://www.efinancecloud.com/" }) => {
         <div className="component_forkme">
             <a href={repo} className="efinance-corner" aria-label="Visit eFinance Cloud" rel="nofollow" target="_blank">
                 <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZMcmeW33E6pMbqd_ax9vxCiVgH9GYarF2NA&s" // Replace with the correct logo URL
+                    src="https://raw.githubusercontent.com/3ziizz/filestashTest/refs/heads/master/client/pages/connectpage/logo.png" // Replace with the correct logo URL
                     alt="eFinance Cloud Logo"
-                    width="80"
-                    height="80"
-                    style={{ borderRadius: "50%" }}
+                    width="200" 
+                    height="85" 
+                    style="margin-top: 20px; margin-right: -40px;"
                 />
             </a>
         </div>
