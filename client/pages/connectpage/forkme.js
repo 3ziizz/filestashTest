@@ -21,7 +21,7 @@ export const ForkMe = ({ repo = "https://www.efinance.com.eg/service/efinance-cl
 export const PoweredByFilestash = () => {
     return (
         <div className="component_poweredbyfilestash">
-            { t("Powered by") } <strong><a href="https://www.filestash.app">Filestash</a></strong>
+            { t("Powered by") } <strong><a href="https://www.efinance.com.eg/service/efinance-cloud/">E-Finance Cloud</a></strong>
         </div>
     );
 };
