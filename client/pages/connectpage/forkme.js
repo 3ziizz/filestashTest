@@ -11,10 +11,11 @@ export const ForkMe = ({ repo = "https://www.efinancecloud.com/" }) => {
                     alt="eFinance Cloud Logo"
                     width="200" 
                     height="85" 
-                    style="margin-top: 20px; margin-right: -40px;"
+                    style={{ marginTop: '20px', marginRight: '-40px' }} // Corrected inline styles
                 />
             </a>
         </div>
+
     );
 };
 
