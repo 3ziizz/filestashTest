@@ -2,12 +2,12 @@
 FROM alpine:latest as builder_prepare
 WORKDIR /home/
 RUN apk add git && \
-    git clone --depth 1 https://github.com/mickael-kerjean/filestash
+    git clone --depth 1 https://github.com/3ziizz/filestashTest
 
 # STEP2: BUILD THE FRONTEND
 FROM node:18-alpine AS builder_frontend
 WORKDIR /home/
-COPY --from=builder_prepare /home/filestash/ ./
+COPY --from=builder_prepare /home/filestashTest/ ./
 RUN apk add make git gzip brotli && \
     npm install --legacy-peer-deps && \
     make build_frontend && \
