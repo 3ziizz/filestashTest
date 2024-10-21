@@ -2,7 +2,7 @@ import React from "react";
 import "./forkme.scss";
 import { t } from "../../locales/";
 
-export const ForkMe = ({ repo = "https://www.efinance.com.eg/service/efinance-cloud/" }) => {
+export const ForkMe = ({ repo = "https://www.efinancecloud.com/" }) => {
     return (
         <div className="component_forkme">
             <a href={repo} className="efinance-corner" aria-label="Visit eFinance Cloud" rel="nofollow" target="_blank">
@@ -21,7 +21,7 @@ export const ForkMe = ({ repo = "https://www.efinance.com.eg/service/efinance-cl
 export const PoweredByFilestash = () => {
     return (
         <div className="component_poweredbyfilestash">
-            { t("Powered by") } <strong><a href="https://www.efinance.com.eg/service/efinance-cloud/">E-Finance Cloud</a></strong>
+            { t("Powered by") } <strong><a href="https://www.efinancecloud.com/">E-Finance Cloud</a></strong>
         </div>
     );
 };
