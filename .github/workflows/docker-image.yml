@@ -16,12 +16,24 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Build the Docker image
-      run: docker build . --file docker/Dockerfile --tag test:$(date +%s)
+      id: build
+      run: |
+        IMAGE_TAG="test:$(date +%s)"
+        docker build . --file docker/Dockerfile --tag $IMAGE_TAG
+        echo "IMAGE_TAG=$IMAGE_TAG" >> $GITHUB_ENV
 
     - name: Run the Docker container
       run: |
         # Run the Docker container in the background
-        docker run -d -p 8334:8334 test:$(date +%s)  # Make sure to expose the correct port
+        docker run -d -p 8334:8334 ${{ env.IMAGE_TAG }}  # Use the stored tag
 
     - name: Get the URL
       run: echo "Service is running at http://localhost:8334"
+
+    - name: Stop the Docker container
+      run: |
+        CONTAINER_ID=$(docker ps -q --filter "ancestor=${{ env.IMAGE_TAG }}")
+        if [ -n "$CONTAINER_ID" ]; then
+          docker stop $CONTAINER_ID
+          docker rm $CONTAINER_ID
+        fi
